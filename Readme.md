@@ -108,3 +108,113 @@ npm run dev
 ```bash
 http://localhost:3000
 ```
+
+## 📘 API Endpoints
+
+### **GET /todos**
+
+Mengambil semua todo.
+
+```bash
+http://localhost:4000/todos
+```
+
+**Response**
+
+```json
+[
+  {
+    "id": 1,
+    "title": "Learn Next.js",
+    "description": "Understand App Router",
+    "completed": false
+  }
+]
+```
+
+### **POST /todos**
+
+Membuat todo baru.
+
+```bash
+http://localhost:4000/todos
+```
+
+**Request Body**
+
+```json
+[
+  {
+    "title": "Buy groceries",
+    "description": "Milk, Bread, Eggs"
+  }
+]
+```
+
+**Response**
+
+```json
+[
+ {
+  "message": "Todo created successfully",
+  "data": {
+    "id": 2,
+    "title": "Buy groceries",
+    "description": "Milk, Bread, Eggs",
+    "completed": false
+  }
+]
+```
+
+### **PUT /todos/:id**
+
+Mengupdate todo berdasarkan ID.
+
+```bash
+http://localhost:4000/todos/2
+```
+
+**Request Body**
+
+```json
+[
+  {
+    "title": "Updated title",
+    "description": "Updated description",
+    "completed": true
+  }
+]
+```
+
+**Response**
+
+```json
+[
+ {
+    "message": "Todo updated successfully",
+    "data": {
+    "id": 2,
+    "title": "Updated title",
+    "description": "Updated description",
+    "completed": true
+  }
+]
+```
+
+### **DELETE /todos/:id**
+
+Menghapus todo berdasarkan ID.
+
+```bash
+http://localhost:4000/todos/2
+```
+
+**Response**
+
+```json
+[
+  {
+    "message": "Todo deleted successfully"
+  }
+]
+```
